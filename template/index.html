@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+
+<body bgcolor="cyan">
+    <div class="login">
+    <style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    </style>
+        <h1>Churn Rate Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <p><input type="text" name="International_Plan" placeholder="International_Plan" required="required" /></p>
+        <p><input type="text" name="Day_Mins" placeholder="Day_Mins" required="required" /></p>
+        <p><input type="text" name="Day_Charge" placeholder="Day_Charge" required="required" /></p>
+        <p><input type="text" name="CustServ_Calls" placeholder="CustServ_Calls" required="required" /></p>
+        <p><button type="submit"  style="height: 50px; width: 200px; left: 50; top: 50;" class="btn btn-primary btn-block btn-large">Click for Churn Rate</button></p>
+    </form>
+
+   <br>
+   <br>
+   <p><button type="output"  style="height: 50px; width: 200px; left: 50; top: 50;" class="btn btn-primary btn-block btn-large">{{ prediction_text }}</button></p>
+
+ </div>
+
+
+</body>
+</html>
